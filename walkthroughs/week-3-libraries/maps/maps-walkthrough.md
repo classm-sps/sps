@@ -2,19 +2,13 @@
 
 ## Getting Started
 
-Over the past 2 weeks, you've learned about client-side HTML and JavaScript and
-server-side Java.
-
-This week, you're going to learn about libraries that provide access to various
-features of Google Cloud.
-
 This walkthrough introduces the Google Maps library, which lets you add an
 interactive Google Map to your page.
 
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme maps-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/maps/maps-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -53,19 +47,39 @@ to learn how to add a Google Map to your page.
 [Here](https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/map-sync)
 is another example.
 
-The `examples` directory contains a `hello-world` example. Modify its
-`index.html` page to include your API key where it currently contains
-`YOUR_API_KEY`. Then run a dev server in the `hello-world` directory.
+The `examples` directory contains a `hello-world` project. Modify its
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/maps/examples/hello-world/src/main/webapp/index.html">
+  index.html
+</walkthrough-editor-open-file>
+file to include your API key where it currently contains `YOUR_API_KEY`. Then
+`cd` into the `hello-world` directory and run a dev server:
 
 ```bash
 mvn appengine:devserver
 ```
 
-Then modify your portfolio to include a Google Map. Don't worry about adding
+You should see a webpage that shows a Google Map.
+
+Read through the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/maps/examples/hello-world/src/main/webapp/index.html">
+  index.html
+</walkthrough-editor-open-file>
+and
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/maps/examples/hello-world/src/main/webapp/script.js">
+  script.js
+</walkthrough-editor-open-file>
+files to see how they add a Google Map to the page.
+
+### Your Turn
+
+Modify your portfolio to include a Google Map. Don't worry about adding
 features like markers or interactivity yet! Focus on getting the map to show
 before moving on to more advanced functionality.
 
-## Pull Request
+### Pull Request
 
 When you have a Google Map showing in your portfolio, create a pull request and
 send it to your advisor for a code review. Try to keep code reviews as short as
@@ -94,6 +108,12 @@ specific locations. To learn about markers, read through this documentation:
 -   [Custom Markers](https://developers.google.com/maps/documentation/javascript/custom-markers)
 
 The `examples` directory contains a `marker` example to help you get started.
+The
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/walkthroughs/week-3-libraries/maps/examples/marker/src/main/webapp/script.js">
+  script.js
+</walkthrough-editor-open-file>
+file contains code that adds a marker to a Google Map.
 
 If you want to show specific locations, then consider adding markers to the map
 in your portfolio page. For example, you could add markers that show your
@@ -184,8 +204,13 @@ visualization from
 When you're happy with your feature and you're ready to show it to the world,
 deploy it to your live server!
 
-Your `appengine-web.xml` file should already contain your project ID. If so, you
-can deploy to your live server by executing this command:
+Your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
+  appengine-web.xml
+</walkthrough-editor-open-file>
+file should already contain your project ID. If so, you can deploy to your live
+server by executing this command:
 
 ```bash
 mvn appengine:update
@@ -205,3 +230,9 @@ Congratulations! You should now have a working map feature! Make sure your
 submitted to your GitHub repo by the end of the week.
 
 When you're done, share your live URL in the chat!
+
+To return to the libraries walkthrough, run this command:
+
+```bash
+teachme ~/software-product-sprint/walkthroughs/week-3-libraries/libraries-walkthrough.md
+```

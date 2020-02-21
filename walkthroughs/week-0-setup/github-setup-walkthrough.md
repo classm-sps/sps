@@ -5,18 +5,19 @@ Follow this walkthrough to setup your GitHub repo.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme github-setup-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-0-setup/github-setup-walkthrough.md
 ```
 
 Click the `Start` button to start the walkthrough!
 
 ## Getting Started
 
+[Git](https://git-scm.com/) is a distributed [version control](https://en.wikipedia.org/wiki/Version_control) 
+system, which lets you track changes to your files and collaborate with others.
 [GitHub](https://github.com/) is a Git repository host, which means that it's a
-website that allows you to store code. This is useful for
-[version control](https://en.wikipedia.org/wiki/Version_control), to release
-code as open source, or to collaborate with a team. You're going to use GitHub
-to store your projects.
+website that allows you to store your repository and let others access it. 
+This is useful to release code as open source, or to use the advanced collaboration tools with a team.
+You're going to use GitHub to store your projects.
 
 ## Register
 
@@ -28,9 +29,11 @@ Make sure you use your own email address here, not your SPS account!
 
 ## Unlink Google's Repo
 
-Right now, this code still points to Google's repository instead of your
-repository. To fix that, you're first going to remove the pointer to Google's
-repo.
+When you ran the command `git clone https://github.com/google/software-product-sprint.git`, 
+you downloaded the official repository to your Cloud Shell worksapce.
+
+Right now, this repository still points to Google's GitHub account instead of yours.
+To fix that, you're first going to remove the pointer to Google's repo.
 
 Make sure you're inside the git repository you just cloned for the rest of
 this walkthrough:
@@ -50,8 +53,8 @@ git remote remove origin
 On [GitHub](https://github.com/), click on the `+` in the top-right and click on
 `new repository`. This will take you to a page to create your repo on GitHub.
 
-1.  Enter a repository name. Something like `sps` or `my-portfolio` is a fine
-    name.
+1.  Enter a repository name. Something like `software-product-sprint` or
+    `my-portfolio` is a fine name.
 2.  Set your repo to public. This allows anyone to see your code.
 3.  Click the green `create repository` button!
 
@@ -59,10 +62,11 @@ At this point you should have an empty repo.
 
 ## Link Your Repo
 
-In your GitHub repo page, find your repo's URL. It should end in `.git`, like
+In your GitHub repo page, find your repo's URL. It should start with `https://`
+and end in `.git`, like
 `https://github.com/your-username/your-repo-name.git`. Copy that URL.
 
-To link this directory to your repo, execute this command:
+To link this local copy to your GitHub project, execute this command:
 
 ```bash
 git remote add origin YOUR_URL_HERE
@@ -72,6 +76,16 @@ Then to store this directory in your repo, run this command:
 
 ```bash
 git push -u origin master
+```
+
+This should prompt you for your username/password the first time that
+you're pushing to GitHub. If your GitHub account is set up with two-factor 
+authentication, you'll need to create an [API Key](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) and use that instead of a password.
+
+If you'd like Git to store the username/password for pushing to GitHub, change this setting:
+
+```bash
+git config credential.helper store
 ```
 
 You should now see this code in your repo on GitHub!
@@ -84,9 +98,10 @@ needs access to your repo.
 To give your advisor access to your repo, add them as a collaborator.
 
 1.  Navigate to your repo's page in GitHub.
-2.  Go to the `Settings` tab.
-3.  Select `Collaborators`.
-4.  Add your Project Advisor using their GitHub username or email address.
+1.  Go to the `Settings` tab.
+1.  Select `Collaborators`. (*Note*: If you don't see this, 
+    look for `Manage Access` -> `Invite a Collaborator` instead)
+1.  Add your Project Advisor using their GitHub username or email address.
 
 Your advisor can now help with code reviews.
 
@@ -124,11 +139,13 @@ git config --global user.name "Your Name"
 
 ## Modify README
 
-To test that everything is connected, modify the `README.md` file.
+To test that everything is connected, modify your
+<walkthrough-editor-open-file filePath="software-product-sprint/README.md">README.md</walkthrough-editor-open-file>
+file.
 
-The `README.md` file contains the content that shows in your repo's GitHub page.
-Change the `README.md` file to say "This repo contains [your name]'s portfolio
-and SPS projects."
+This file contains the content that shows in your repo's GitHub page.
+Change it to say "This repo contains [your name]'s portfolio and
+SPS projects."
 
 The `README.md` file now belongs to you. You should feel free to customize it
 and make it your own!
@@ -163,8 +180,8 @@ git push origin YOUR_BRANCH_NAME
 ```
 
 Your changes are now stored in a branch on your repo. Follow the instructions
-for creating a pull request on the SPS website to send your changes to your
-advisor for review.
+[here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
+for creating a pull request to send your changes to your advisor for review.
 
 ## Congratulations!
 
