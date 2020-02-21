@@ -8,7 +8,7 @@ Engine to deploy that webpage to a public URL.
 You can return to this walkthrough anytime by running this command:
 
 ```bash
-teachme portfolio-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-1-web-development/portfolio-walkthrough.md
 ```
 
 Click the **Start** button to begin!
@@ -18,15 +18,33 @@ Click the **Start** button to begin!
 You'll be working from the `portfolio` directory. Take a minute to look at the
 files under that directory.
 
--   `pom.xml` is a Maven configuration file. This file sets up the libraries
-    the project uses.
--   `src/main/webapp/index.html` is an HTML file that will be rendered by the
-    browser.
--   `src/main/webapp/script.js` contains JavaScript that makes the page
-    interactive.
--   `src/main/webapp/style.css` contains CSS that styles the page.
--   `src/main/webapp/WEB-INF/appengine-web.xml` is App Engine's configuration
-    file. This file tells Google Cloud how to deploy your code.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/pom.xml">
+      pom.xml
+    </walkthrough-editor-open-file>
+    is a Maven configuration file. This file sets up the libraries the project
+    uses.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/src/main/webapp/index.html">
+      index.html
+    </walkthrough-editor-open-file>
+    is an HTML file that will be rendered by the browser.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/src/main/webapp/script.js">
+      script.js
+    </walkthrough-editor-open-file>
+    contains JavaScript that makes the page interactive.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/src/main/webapp/style.css">
+      style.css
+    </walkthrough-editor-open-file>
+    contains CSS that styles the page.
+-   <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
+      appengine-web.xml
+    </walkthrough-editor-open-file>
+    is App Engine's configuration file. This file tells Google Cloud how to
+    deploy your code.
 
 Try navigating to the various files in this project and viewing their contents
 in the Google Cloud Shell editor.
@@ -38,7 +56,13 @@ You'll learn more about these files in the following steps.
 This project is a web application that contains HTML files. To make that HTML
 available to your web browser, you need to run a **server** to host the file.
 
-To run a development server, execute this command:
+To run a development server, first navigate to the `portfolio` directory:
+
+```bash
+cd portfolio
+```
+
+Then execute this command:
 
 ```bash
 mvn appengine:devserver
@@ -64,17 +88,24 @@ the next step!
 
 ## index.html
 
-Open the `portfolio/src/main/webapp/index.html` file in the Google Cloud Shell
-editor.
+Open the 
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/index.html">
+  index.html
+</walkthrough-editor-open-file>
+file in the Google Cloud Shell editor.
 
 This file contains **HTML tags** that tell a browser how to render text. For
 example, the `<h1>` tag renders as a heading, and the `<p>` tag renders as a
 paragraph.
 
-Modify the text in this file and save your changes. For example, try changing
-the heading to include your name.
+Modify the text in this file and save your changes. Try changing the heading
+to include your name.
 
 ### Restarting Your Development Server
+
+**Tip:** Pressing `ctrl + c` in the console will interrupt any process running
+in the foreground, which will usually cause the program to abort.
 
 Whenever you change your code, you need to restart your server to see your
 changes. Press `ctrl + c` in the console to shut down your server, and then run
@@ -122,6 +153,12 @@ mvn appengine:devserver
 Then look through the files in the `stanley` project to see an example of HTML,
 JavaScript, and CSS in action.
 
+**Remember:** If you don't see changes after you restart your server, you might
+need a
+[cache-clearing refresh](https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
+
+When you're done looking at the example, `cd` back into the `portfolio` directory.
+
 ## HTML tags
 
 If you're new to HTML, that's okay! Here are a few place to learn more:
@@ -133,23 +170,45 @@ If you're new to HTML, that's okay! Here are a few place to learn more:
 Don't forget that Google is your friend! For example, try searching "html list
 tag" for a ton of useful results about adding lists to HTML.
 
-For now, add a single `<h1>` element containing your name to your portfolio
-page. Then run a dev server and confirm that you can see your change.
+For now, edit your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/index.html">
+  index.html
+</walkthrough-editor-open-file>
+file to contain a `<p>` element that introduces you. Then run a dev server and
+confirm that you can see your change.
 
 ## Uploading Images
 
-To add images to your project, right-click the `src/main/webapp/images`
-directory and then select `Upload Files...` to select an image from your
-computer.
+All  of the client-side files are stored in the `webapp` directory. In order to
+keep your images in one place, create a new `images` directory inside the
+`webapp` directory. To create a new directory, right click on the `webapp`
+directory. Then select "New Folder". 
+
+Once you've created the `images` directory, right-click it and select
+`Upload Files...` to select an image from your computer.
 
 To reference an image in your `images` directory, use a path that starts with a
 `/` forward slash, like `/images/cat.jpg`. This path will work on a development
 server and when you deploy to a live URL.
 
+Modify your
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/index.html">
+  index.html
+</walkthrough-editor-open-file>
+file to include an image. It can be a selfie, or an avatar, or a picture of
+your pet. This is your portfolio, so make it your own!
+
 ## CSS
 
 You can use Cascading Style Sheets, or CSS, to style your HTML with formatting
-and colors. The `style.css` file contains some default styling.
+and colors. The 
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/style.css">
+  style.css
+</walkthrough-editor-open-file>
+file contains some default styling.
 
 Learning CSS is **optional** for SPS. You can skip this step if you want. But
 if you're curious, here are a few places to learn more:
@@ -165,6 +224,16 @@ pretty after you get their core functionality working!
 
 You can use JavaScript to make your page interactive.
 
+Open the
+<walkthrough-editor-open-file
+    filePath="software-product-sprint/portfolio/src/main/webapp/script.js">
+  script.js
+</walkthrough-editor-open-file>
+file to see a function that shows a random greeting.
+
+Change this to show a random quote from your favorite TV show, or a random fact
+about yourself.
+
 ### JavaScript Console
 
 Your browser's JavaScript console will show anything you print out using the
@@ -172,21 +241,12 @@ Your browser's JavaScript console will show anything you print out using the
 place you look when you have a problem.** It's a good idea to always have your
 JavaScript console open, so you see errors right away.
 
+### Learn More
+
 You can learn more about JavaScript at
 [W3Schools](https://www.w3schools.com/js/default.asp) and
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript), or by googling
 "JavaScript tutorials".
-
-### DOM Manipulation
-
-You can use JavaScript to change the HTML in the page, also called the document
-object model, or the DOM.
-
-The `script.js` file contains a function that shows a random greeting when the
-user clicks a button.
-
-Consider changing this to show a random quote from your favorite TV show, or a
-random fact about yourself.
 
 ## Your Turn
 
@@ -208,7 +268,7 @@ Don't be afraid to get creative, but focus on finishing a
 that proves you have all of the pieces connected, and then come back later and
 add extra features if you have time left over.
 
-## Development Server
+## Development Workflow
 
 As you make changes, make sure you're testing them using your dev server. You
 should test your changes in small increments: it's not uncommon to test your
@@ -229,6 +289,45 @@ When you see `Dev App Server is now running` in the console, click the
 <walkthrough-web-preview-icon></walkthrough-web-preview-icon> icon and then
 select **Preview on port 8080** to open a tab that shows your page.
 
+After you've added a working feature to your project, it's a good idea to
+commit your changes. It's easier for reviewers to understand many small
+commits instead of a few large ones.
+
+A good commit message is a summary of what a change _does_, not what was _done_.
+Use the imperative tone:
+
+```
+# Good
+Add selfie image to main page.
+```
+
+```
+# Bad
+Added selfie image to main page.
+```
+
+**Remember:** to commit, you have to stage the changed files, then commit it.
+
+Replace FILEPATH with the path/to/the/changed/file. To stage a file, run:
+
+```
+git add FILEPATH
+```
+
+You can stage multiple files at once.
+
+To check the staged files, run:
+
+```
+git status
+```
+
+To commit changes, run:
+
+```
+git commit -m "YOUR COMMIT MESSAGE"
+```
+
 ## Live Server
 
 When you're happy with your portfolio page and you're ready to show it to the
@@ -240,7 +339,13 @@ To deploy to a live server:
     [https://console.cloud.google.com/home/dashboard](https://console.cloud.google.com/home/dashboard).
 -   Make sure your project is selected in the dropdown at the top.
 -   Find the **Project ID** on that page.
--   Open `appengine-web.xml` and change `YOUR_PROJECT_ID` to your project ID.
+-   Open the
+    <walkthrough-editor-open-file
+        filePath="software-product-sprint/portfolio/src/main/webapp/WEB-INF/appengine-web.xml">
+      appengine-web.xml
+    </walkthrough-editor-open-file>
+    file.
+-   Change `YOUR_PROJECT_ID_HERE` to your project ID.
 -   Execute this command:
 
 ```bash
